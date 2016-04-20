@@ -16,7 +16,7 @@ import android.widget.Toast;
 
 public class MainActivity extends Activity 
 {
-	final String RESTSERVICEURI = "http://nodejsgpstrackerrestservice.mybluemix.net"; // Bluemix Route
+	final String RESTSERVICEURI = "http://gpstrackerservice.mybluemix.net"; // Bluemix Route
 	Button btnLocation;
 	TextView tvLink;
 	TextView tvLatitude;
@@ -47,8 +47,7 @@ public class MainActivity extends Activity
 		context = MainActivity.this;
 		gps = new GPSTracker(context);
 		http = new Http();
-		TelephonyManager tManager = (TelephonyManager)this.getSystemService(Context.TELEPHONY_SERVICE);
-		deviceId = tManager.getDeviceId();
+		deviceId = "AllenPhone";
 		tvDeviceId.setText(deviceId);
 		tvLink.setText(Html.fromHtml("<a href=\"" + RESTSERVICEURI + "/?deviceid=" + deviceId + "\">See your location on the web</a>"));
 		
